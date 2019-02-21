@@ -220,6 +220,14 @@
             background: #fff;
             transition: all 0.3s ease-in-out;
         }
+        .slider-box {
+            text-align: center;
+            color: #fff;
+            font-size: 1.5em;
+        }
+        .quotes-slide {
+            padding: 20px 45px;
+        }
 
     </style>
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
@@ -227,14 +235,17 @@
 </head>
   <body>
       <header class="blog-single-page-title headerbar" id="top" style="background-color: #000;
-      background-image: url(https://liliandias.blog.br/wp-content/themes/liliandias-blog/assets/images/unsplash/noah-silliman-407597-unsplash.jpg); background-position: center; background-size: cover; border-bottom: 3px solid #8b0000; min-height:200px; padding-top: 70px;">
+      background-image: url(https://liliandias.blog.br/wp-content/themes/liliandias-blog/assets/images/unsplash/noah-silliman-407597-unsplash.jpg); background-position: center; background-size: cover; border-bottom: 3px solid #8b0000; min-height:200px;">
         <div class="background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(121,9,9,0.15) 60%, rgba(255,255,255,0) 100%);height: 100%;">
-            <div class="header-nav" style="display: block; position: fixed; width: 100%; min-height: 50px;
+            <div class="header-nav" style="display: block; width: 100%; min-height: 50px;
             top: 0; left: 0; z-index: 9999; background-color: rgba(63,0,0,.8); color: #fff;">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6">
-                            <h1><span style="font-family: Satisfy,cursive;">LDS </span>Services</h1>
+                        <div class="col-md-6" style="display: flex;">
+                            <amp-img style="padding: 0px 0px; margin: 15px 0px;" src="https://liliandias.blog.br/wp-content/themes/liliandias-blog/assets/images/li_35x35.png" alt="logo tag" height="40" width="45"></amp-img>
+                            <h1 style="padding: 15px; margin: 0px;">
+                                <span style="font-family: Satisfy,cursive;">LDS </span>Services
+                            </h1>
                         </div>
                     </div>
                 </div>
@@ -242,11 +253,26 @@
             
             <div class="container">
                 <div class="row">
-                    <div class="col-md-7">
-                        <h2 class="page-title" style="font-family: Satisfy,cursive; font-size: 3.5em; color: #fff;">Bem vindo!</h2>
-                    </div>
-                    <div class="cal-md-5">
-            
+                    <div class="col-md-12">
+                        <h2 class="page-title" style="text-align:center; font-family: Satisfy,cursive; font-size: 3.5em; color: #fff;">Conheça os serviços Disponíveis</h2>
+
+                        <amp-carousel height="200" layout="fixed-height" type="slides" autoplay="8000">
+                            <div>
+                                <div class="slider-box">
+                                   <h3> Arquitetura da Informação</h3>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="slider-box">
+                                    <h3>Design</h3>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="slider-box">
+                                    <h3>Web Development</h3>
+                                </div>
+                            </div>
+                        </amp-carousel>
                     </div>
                 </div>
             </div>
@@ -283,7 +309,7 @@
                             <div class="col-md-12">                              
                                     <amp-selector id="myTabs" class="tabs-with-flex" role="tablist">
                                         <!-- Tab 01 -->
-                                        <div class="tabs-selector" on="tap:AMP.setState({servicesList: { service: 'Arquitetura da Informação'} })" id="sample2-tab1" role="tab" aria-controls="sample2-tabpanel1" option selected>
+                                        <div class="tabs-selector" id="sample2-tab1" role="tab" aria-controls="sample2-tabpanel1" option selected>
                                             <span class="btn-service-icon"><i class="fas fa-sitemap"></i></span>
                                             <span class="service-icon-note">Arquitetura da Informação</span>
                                         </div>
@@ -295,13 +321,15 @@
                                                         <p>
                                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat consequuntur recusandae cupiditate nam delectus ullam quod animi pariatur sapiente aliquam eum cumque, nesciunt nisi facilis quas laborum quaerat reprehenderit quis? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad nemo inventore quaerat in veniam ducimus excepturi eaque aliquam reiciendis quis aperiam veritatis corrupti maxime vero maiores aspernatur labore, voluptate vitae.
                                                         </p>
+
+                                                        <a class="btn" on="tap:AMP.setState({servicesList: { service: 'Arquitetura da Informação'} })" tabindex="2" href="#contact">Contrate o Serviço</a>
                                                     </div>
                                                     <div class="col-md-6"></div>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- Tab 02 -->
-                                        <div class="tabs-selector" id="sample2-tab2" role="tab" aria-controls="sample2-tabpanel2" on="tap:AMP.setState({servicesList: { service: 'Design'} })" option>
+                                        <div class="tabs-selector" id="sample2-tab2" role="tab" aria-controls="sample2-tabpanel2"  option>
                                             <span class="btn-service-icon" ><i class="fas fa-pencil-alt"></i></span>
                                             <span class="service-icon-note">Design</span>
                                         </div>
@@ -312,11 +340,13 @@
                                                     <div class="col-md-6">
                                                         <h3 class="service-icon-note mobile-only">Design</h3>
                                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam voluptatum, distinctio ut porro, quisquam dignissimos quam ducimus dicta in alias cumque cupiditate temporibus repudiandae doloremque repellat rem consequuntur eius aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptatibus dolorum fuga doloribus amet, nihil tenetur expedita nemo quasi. Omnis quasi fuga officiis dolores? Aspernatur non harum at possimus cum.</p>
+
+                                                        <a class="btn" tabindex="2" on="tap:AMP.setState({servicesList: { service: 'Design'} })" href="#contact">Contrate o Serviço</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tabs-selector" id="sample2-tab3" role="tab" aria-controls="sample2-tabpanel3" on="tap:AMP.setState({servicesList: { service: 'Web Development'} })" option>
+                                        <div class="tabs-selector" id="sample2-tab3" role="tab" aria-controls="sample2-tabpanel3" option>
                                             <span class="btn-service-icon"><i class="fas fa-code"></i></span>
                                             <span class="service-icon-note">Web Development</span>
                                         </div>
@@ -329,6 +359,9 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit tempora facere atque. Aliquid aperiam consequuntur, provident ratione in, nostrum odio sed numquam aut magni voluptas quis consequatur dolor minima modi?</p>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <a class="btn" on="tap:AMP.setState({servicesList: { service: 'Web Development'} })" tabindex="2" href="#contact">Contrate o Serviço</a>
                                                     </div>
                                                 </div>
                                             </div> 
@@ -350,10 +383,10 @@
                         <h4 class="section-title white-title"><strong>Depoimentos</strong> | Testimonials</h4>
                     </div>
                     <div class="col-sm-8 col-md-8">
-                        <div class="carousel-container" style="background-color: rgba(255,255,255,0.6); padding: 30px 20px;">
-                            <amp-list width="auto" height="200" layout="fixed-height" src="//liliand.sandbox.msiteproject.com/amp/data/testimonial.json" items="." single-item>
+                        <div class="carousel-container" style="background-color: rgba(255,255,255,0.6);">
+                            <amp-list width="auto" height="350" layout="fixed-height" src="//liliand.sandbox.msiteproject.com/amp/data/testimonial.json" items="." single-item>
                                 <template type="amp-mustache">
-                                    <amp-carousel height="300" layout="fixed-height" type="slides">
+                                    <amp-carousel height="350" layout="fixed-height" type="slides">
                                         {{#items}}
                                         <div>
                                             <div class="quotes-slide">
@@ -398,13 +431,11 @@
 
         <!-- Section 004 -->
         <section class="contact-section" id="contact-section" style="background: url(https://liliandias.blog.br/wp-content/themes/liliandias-blog/assets/images/unsplash/neven-krcmarek-246988-unsplash.jpg) center center no-repeat fixed; -webkit-background-size: cover; -moz-background-size: cover;
-        -o-background-size: cover; background-size: cover; width: 100%; padding: 50px 0px; ">
-            <div class="container">
+        -o-background-size: cover; background-size: cover; width: 100%; padding: 50px 0px;">
+            <div class="container" id="contact">
                 <div class="row">
                     <div class="col-sm-8">
-                        <form method="post"
-                            action-xhr="https://example.com/subscribe"
-                            target="_top">
+                        <form method="post" action-xhr="#" target="_top">
                             <fieldset>
                             <div class="form-group">
                               <label>
@@ -523,25 +554,25 @@
                                     <li class="social-item menu-item--current">
                                         <a class="social-link linkedin-link" href="https://br.linkedin.com/in/liliansousa"
                                             title="Lilian Dias Linkedin" target="_blank">
-                                            <i class="fa fa-linkedin"></i>
+                                            <i class="fab fa-linkedin-in"></i>
                                         </a>
                                     </li>
                                     <li class="social-item">
                                         <a class="social-link instagram-link" href="https://instagram.com/liliandias_s"
                                             title="Lilian Dias Instagram" target="_blank">
-                                            <i class="fa fa-instagram"></i>
+                                            <i class="fab fa-instagram"></i>
                                         </a>
                                     </li>
                                     <li class="social-item">
                                         <a class="social-link twitter-link" href="https://twitter.com/liliandias_s"
                                             title="Lilian Dias Twitter" target="_blank">
-                                            <i class="fa fa-twitter"></i>
+                                            <i class="fab fa-twitter"></i>
                                         </a>
                                     </li>
                                     <li class="social-item">
                                         <a class="social-link pinterest-link" href="https://www.pinterest.com/liliandias_s"
                                             title="Lilian Dias Pinterest" target="_blank">
-                                            <i class="fa fa-pinterest"></i>
+                                            <i class="fab fa-pinterest-p"></i>
                                         </a>
                                     </li>
                                 </ul>
